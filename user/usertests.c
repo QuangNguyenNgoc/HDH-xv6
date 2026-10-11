@@ -244,7 +244,7 @@ copyinstr3(char *s)
 // See if the kernel refuses to read/write user memory that the
 // application doesn't have anymore, because it returned it.
 void
-rwsbrk()
+rwsbrk(char *s)
 {
   int fd, n;
   
@@ -2345,7 +2345,8 @@ fsfull()
 {
   int nfiles;
   int fsblocks = 0;
-
+  (void)fsblocks;
+  
   printf("fsfull test\n");
 
   for(nfiles = 0; ; nfiles++){
